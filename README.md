@@ -1,1 +1,1 @@
-# redux-sputink
+# redux-sputnik
