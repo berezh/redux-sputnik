@@ -2,10 +2,10 @@
 
 Utils for redux
 
-## Installation
+### Installation
 
 ```
-npm install react-string-format
+npm install redux-sputnik
 ```
 
 ## newAction
