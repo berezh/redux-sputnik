@@ -46,7 +46,7 @@ import { newReducer } from 'redux-sputnik';
 const COMMON_INITIAL_STATE = {};
 
 export const commonReducer = newReducer(AUTH_INITIAL_STATE, {
-    [AuthActionTypes.DO_REQUEST]: (state, params: string) => {
+    [CommonTypes.DO_REQUEST]: (state, params: string) => {
         return {...state, params};
     }
 });
