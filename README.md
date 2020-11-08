@@ -2,6 +2,10 @@
 
 Utils for redux
 
+<a href="https://www.npmjs.com/package/redux-sputnik">
+    <img src="https://nodei.co/npm/redux-sputnik.png?mini=true">
+</a>
+
 ### Installation
 
 ```
@@ -16,7 +20,7 @@ Creates an action
 import { newAction } from 'redux-sputnik';
 
 export const CommonActions = {
-    doRequest: (param: string) => newAction(CommonActionTypes.DO_REQUEST, param),
+    myAction: (param: string) => newAction(CommonActionTypes.MY_ACTION, param),
 }
 
 ```
@@ -31,7 +35,7 @@ import { newActionType } from 'redux-sputnik';
 const prefix = 'common';
 
 export const CommonTypes = {
-    DO_REQUEST: newActionType(prefix, 'DO_REQUEST')
+    MY_ACTION: newActionType(prefix, 'MY_ACTION')
 }
 
 ```
@@ -41,13 +45,30 @@ export const CommonTypes = {
 Creates reducer
 
 ```jsx
-import { newReducer } from 'redux-sputnik';
+import { newReducersetState } from 'redux-sputnik';
 
 const COMMON_INITIAL_STATE = {};
 
 export const commonReducer = newReducer(AUTH_INITIAL_STATE, {
-    [CommonTypes.DO_REQUEST]: (state, params: string) => {
-        return {...state, params};
+    [CommonTypes.MY_ACTION]: (state, params: string) => {
+        return setState(state, _ => _.value, params};
+    }
+});
+
+```
+
+## setState
+
+Changes redux state
+
+```jsx
+import { newReducer, setState } from 'redux-sputnik';
+
+const COMMON_INITIAL_STATE = {};
+
+export const commonReducer = newReducer(AUTH_INITIAL_STATE, {
+    [CommonTypes.MY_ACTION]: (state, params: string) => {
+        return setState(state, _ => _.value, params};
     }
 });
 
