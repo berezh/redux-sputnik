@@ -19,19 +19,4 @@ function newReducer<TState>(
     };
 }
 
-interface WorkerReducerMethods<TState, TPayload = any> {
-    [actionType: string]: (state: TState, payload?: TPayload) => TState;
-}
-
-function newWorkerReducer<TState>(
-    reducerMethods: WorkerReducerMethods<TState>,
-): (state: TState, action: ActionWith) => TState {
-    return function reducerFunction(state, action: ActionWith = { type: '', payload: null }): TState {
-        if (action.type in reducerMethods) {
-            return reducerMethods[action.type](state, action.payload);
-        }
-        return state;
-    };
-}
-
-export { newReducer, newWorkerReducer };
+export { newReducer };
