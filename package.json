@@ -1,18 +1,12 @@
 {
     "name": "redux-sputnik",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
         "test": "jest --config jest.config.js",
         "build": "tsc",
-        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint",
-        "version": "npm run format && git add -A src",
-        "postversion": "git push && git push --tags",
         "lint": "eslint ./src/**/*.ts",
         "lint:fix": "npm run lint -- --fix"
     },
