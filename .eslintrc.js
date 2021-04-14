@@ -1,6 +1,7 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
     extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+    plugins: ['tsc'],
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
@@ -18,6 +19,12 @@ module.exports = {
         'explicit-module-boundary-types': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'max-len': ['error', { code: 120, tabWidth: 4 }],
+        'tsc/config': [
+            'error',
+            {
+                configFile: 'tsconfig.json',
+            },
+        ],
     },
     settings: {},
 };
