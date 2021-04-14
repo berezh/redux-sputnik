@@ -40,7 +40,7 @@ export function createLocalStorageStore<TReduxState = any>(
 
     const initialData = loadState(key, version);
 
-    const store = createStore(reducer, initialData, enhancer);
+    const store = createStore<TReduxState, ActionWith, unknown, unknown>(reducer, initialData, enhancer);
 
     store.subscribe(
         throttle(() => {
